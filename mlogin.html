@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        $.ajax({
+          url: "mlogin.php",
+          type: "POST",
+          data: {
+            username: username,
+            password: password,
+          },
+          success: function (data) {
+            if (data == "success") {
+              window.location.href = "listing.html";
+            }
+          },
+        });
+      }
+    </script>
+
+    <style>
+      form{
+        border-radius: 5px;
+        background-color: white;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 1%;
+        padding: 1% 1% 1% 1%;
+     }
+    </style>
+
+  </head>
+  <body style="background-color: #d0d0d0; text-align: center;">
+    <h1>Buy Online Manager</h1>
+    <form>
+      <div><label for="email">Username</label></div>
+      <input class="textfield" id="username" type="textfield" />
+
+      <div><label for="password">Password</label></div>
+      <input class="textfield" id="password" type="textfield" />
+
+      <div style="margin-top: 1%;">
+        <button type="button" class="btn btn-primary" onclick="login()">
+          Log In
+        </button>
+      </div>
+      <table id="user"></table>
+    </form>
+  </body>
+</html>

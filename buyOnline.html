@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuyOnline</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <script>
+    function login() {
+      document.location.href = "login.html";
+    }
+    function register() {
+      document.location.href = "register.html";
+    }
+    function mlogin() {
+      document.location.href = "mlogin.html";
+    }
+  </script>
+  <style>
+    button {
+      margin-top: 10px;
+      width: 200px;
+    }
+  </style>
+  <body style="background-color: #d0d0d0; text-align: center;">
+    <h1>Buy Online</h1>
+    <div style="background-color: white; border-radius: 5px; margin: auto; margin-top: 5%; width: 20%; padding: 20px 20px 20px 20px;">
+      <table class="table">
+        <button class="btn btn-primary" onclick="login()">Log-In</button><br>
+        <button class="btn btn-primary" onclick="register()">Register</button><br>
+        <button class="btn btn-primary" onclick="mlogin()">Manager Log-in</button><br> 
+      </table>
+    </div>
+
+  </body>
+</html>

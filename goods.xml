@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<goods>
+    <item>
+        <itemId>1</itemId>
+        <name>Pen</name>
+        <price>10</price>
+        <quantity>167</quantity>
+        <hold>0</hold>
+        <description>100</description>
+    </item>
+    <item>
+        <itemId>2</itemId>
+        <name>aaa</name>
+        <price>199</price>
+        <quantity>49</quantity>
+        <hold/>
+        <description>100</description>
+    </item>
+    <item>
+        <itemId>3</itemId>
+        <name>aaa</name>
+        <price>100</price>
+        <quantity>0</quantity>
+        <hold>0</hold>
+        <description>100</description>
+    </item>
+
+    <customer customer_id="0">
+        <customer_id/>
+        <items item_id="1">8</items>
+        <items item_id="2">43</items>
+        <items item_id="3">43</items>
+    </customer>
+
+    <customer customer_id="2">
+        <items item_id="1">17</items>
+    </customer>
+</goods>

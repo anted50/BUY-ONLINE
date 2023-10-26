@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <link />
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    function register() {
+      var firstName = document.getElementById("firstName").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      $.ajax({
+        url: "register.php",
+        type: "POST",
+        data: {
+          firstName: firstName,
+          // lastName: lastName,
+          email: email,
+          password: password,
+          // retypePassword: retypePassword,
+          // phoneNumber: phoneNumber,
+          // address: address
+        },
+        success: function (data) {
+          document.getElementById("back").value =
+            "<a href='buyOnline.html'>Back</a>";
+        },
+      });
+    }
+  </script>
+
+  <style>
+     form{
+        border-radius: 5px;
+        background-color: white;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 1%;
+        padding: 1% 1% 1% 1%;
+      
+     }
+
+  </style>
+
+  <body style="background-color: #d0d0d0; text-align: center;">
+    <h1>Buy Online</h1>
+    <form>
+      <div><label for="firstName">First Name</label></div>
+      <input class="textfield" id="firstName" type="textfield" />
+
+      <div><label for="email">E-Mail</label></div>
+      <input class="textfield" id="email" type="textfield" />
+
+      <div><label for="password">Password</label></div>
+      <input class="textfield" id="password" type="textfield" />
+
+      <div style="margin-top: 1%;">
+        <button type="button" class="btn btn-primary" onclick="register()">
+          register
+        </button>
+      </div>
+    </form>
+    <div id="back"></div>
+  </body>
+</html>

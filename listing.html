@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+      function addItem(){
+        var name = document.getElementById("name").value;
+        var price = document.getElementById("price").value;
+        var quantity = document.getElementById("quantity").value;
+        var desc = document.getElementById("desc").value;
+
+        $.ajax({
+          url: "listing.php",
+          type: "post",
+          data:{
+            name: name,
+            price: price,
+            quantity: quantity,
+            desc: desc,
+          },
+          success: function(data){
+            alert(data);
+          }
+        })
+      }
+      function logout(){
+          $.ajax({
+            url: "listing.php",
+            type: "post",
+            data:{
+              logou: "logou",
+            },
+            success: function(data){
+              alert(`thank you,'${data}'`)
+              window.location.href = "mlogin.html";
+            } 
+          })
+        }
+
+    </script>
+  </head>
+
+  <style>
+    form{
+        border-radius: 5px;
+        background-color: white;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 1%;
+        padding: 1% 1% 1% 1%;
+      
+     }
+     td{
+      padding: 1% 1% 1% 1%;
+     }
+  </style>
+
+  <body style="background-color: #d0d0d0; text-align: center;">
+    <h1>Buy Online Manager</h1>
+    <form>
+      <table style="width: 100%;">
+        <tr>
+          <td>Item Name:</td>
+          <td><input type="text" id="name" /></td>
+        </tr>
+        <tr>
+          <td>Item Price:</td>
+          <td><input type="text" id="price" /></td>
+        </tr>
+        <tr>
+          <td>Item Quantity:</td>
+          <td><input type="text" id="quantity" /></td>
+        </tr>
+        <tr>
+          <td>Item Description:</td>
+          <td><input type="text" id="desc" /></td>
+        </tr>
+        <tr>
+          <td><button type="button" class="btn btn-danger" onclick="logout()">log out</button></td> 
+          <td><button type="submit" class="btn btn-primary" onclick="addItem()">add item</button></td> 
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
