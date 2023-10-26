@@ -3,7 +3,7 @@ session_start();
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$file = "/data/manager.txt";
+$file = "data/manager.txt";
 $handle = fopen($file, "r");
 
 while (!feof($handle)) {

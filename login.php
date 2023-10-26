@@ -3,7 +3,7 @@ session_start();
 
 $email = $_POST["email"];
 $password = $_POST["password"];
-$stringFile = file_get_contents("/data/customer.xml");
+$stringFile = file_get_contents("data/customer.xml");
 // $xmlFile = simplexml_load_file($stringFile);
 $xml = new SimpleXMLElement($stringFile);
 
