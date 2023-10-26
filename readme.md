@@ -1,5 +1,6 @@
 # BuyOnline Web Application Project
 
+
 ## Table of Contents
 - [Project Description](#project-description)
 - [Project Tasks](#project-tasks)
@@ -27,7 +28,7 @@ Before you begin, ensure you have the following prerequisites:
 1. Clone the project repository to your web server.
 
 ```bash
-git clone https://github.com/your/repo.git
+git clone https://github.com/anted50/BUY-ONLINE
 ```
 
 2. Set up your web server to serve the project files.
@@ -40,9 +41,3 @@ git clone https://github.com/your/repo.git
 3. Explore the features of BuyOnline, including customer registration, product listing, online shopping, and store management.
 
 4. Remember to log out when you're done.
-
-## Contributing
-If you would like to contribute to this project, please open an issue or submit a pull request with your changes. We welcome contributions to improve and expand the functionality of the BuyOnline web application.
-
-## License
-This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
