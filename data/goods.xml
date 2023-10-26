@@ -4,7 +4,7 @@
         <itemId>1</itemId>
         <name>Pen</name>
         <price>10</price>
-        <quantity>167</quantity>
+        <quantity>166</quantity>
         <hold>0</hold>
         <description>100</description>
     </item>
@@ -27,7 +27,7 @@
 
     <customer customer_id="0">
         <customer_id/>
-        <items item_id="1">8</items>
+        <items item_id="1">9</items>
         <items item_id="2">43</items>
         <items item_id="3">43</items>
     </customer>
