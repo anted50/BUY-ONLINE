@@ -2,7 +2,7 @@
 session_start();
 if (isset($_SESSION["id"])) {
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        $stringFile = file_get_contents("goods.xml");
+        $stringFile = file_get_contents("/data/goods.xml");
         $xml = new SimpleXMLElement($stringFile);
         for ($i = 0; $i < $xml->item->count(); $i++) {
             // $emailXml = $xml->customer[$i]->email;
@@ -21,7 +21,7 @@ if (isset($_SESSION["id"])) {
             $op = $_POST["op"];
             $iId2 = (int) $_POST["iId"];
             // echo $iId2;
-            $stringFile = file_get_contents("goods.xml");
+            $stringFile = file_get_contents("/data/goods.xml");
             $xml = new SimpleXMLElement($stringFile);
 
             $quantity = $xml->item[$iId2 - 1]->quantity;
@@ -31,7 +31,7 @@ if (isset($_SESSION["id"])) {
                 $quantity = $quantity + 1;
             }
             $xml->item[$iId2 - 1]->quantity = $quantity;
-            $xml->asXML("goods.xml");
+            $xml->asXML("/data/goods.xml");
 
             $customerId = (string) $_SESSION["id"];
             // echo $xml->customer->attributes();
@@ -41,7 +41,7 @@ if (isset($_SESSION["id"])) {
                 $parent->addAttribute("customer_id", $customerId);
                 $child = $parent->addChild("items", 1);
                 $child->addAttribute("item_id", $iId2);
-                $xml->asXML("goods.xml");
+                $xml->asXML("/data/goods.xml");
             } else {
                 if (!contains($xml, $iId2, $customerId)) {
                     foreach ($xml->customer as $customer) {
@@ -53,7 +53,7 @@ if (isset($_SESSION["id"])) {
                     if ($elementToModify !== null) {
                         $newChild = $elementToModify->addChild('items', 1);
                         $newChild->addAttribute('item_id', $iId2);
-                        $xml->asXML("goods.xml");
+                        $xml->asXML("/data/goods.xml");
                     }
                 } else {
                     foreach ($xml->customer as $customer) {
@@ -72,7 +72,7 @@ if (isset($_SESSION["id"])) {
                                 }
                                 $items[0] = $val;
                                 // print_r($items);
-                                $xml->asXML("goods.xml");
+                                $xml->asXML("/data/goods.xml");
                             }
                         }
                     }

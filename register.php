@@ -3,7 +3,7 @@ $firstName = $_POST["firstName"];
 $password = $_POST["password"];
 $email = $_POST["email"];
 
-$stringFile = file_get_contents("customer.xml");
+$stringFile = file_get_contents("/data/customer.xml");
 // $xmlFile = simplexml_load_file($stringFile);
 $xml = new SimpleXMLElement($stringFile); 
   
@@ -14,6 +14,6 @@ $parent -> addChild("customer_id", $count);
 $parent -> addChild("firstName", $firstName); 
 $parent -> addChild("email", $email); 
 $parent -> addChild("password", $password); 
-echo $xml->asXML("customer.xml"); 
+echo $xml->asXML("/data/customer.xml"); 
 
 ?>

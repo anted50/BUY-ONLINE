@@ -9,7 +9,7 @@ if (isset($_POST["logou"])) {
     $quantity = $_POST["quantity"];
     $desc = $_POST["desc"];
 
-    $file = file_get_contents("goods.xml");
+    $file = file_get_contents("/data/goods.xml");
     $xml = new SimpleXMLElement($file);
 
     $count = count($xml) + 1;
@@ -22,6 +22,6 @@ if (isset($_POST["logou"])) {
     $parent->addChild("hold", $quantity);
     $parent->addChild("description", $desc);
 
-    $xml->asXML("goods.xml");
+    $xml->asXML("/data/goods.xml");
 }
 ?>
